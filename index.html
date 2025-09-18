@@ -7,24 +7,41 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-gray-200">
-  <!-- Navbar -->
+
   <nav class="bg-gray-800 shadow-lg sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-400">Sanjay Singh</h1>
-      <ul class="flex space-x-6">
-        <li><a href="index.html" class="text-blue-400">Home</a></li>
-        <li><a href="skills.html" class="hover:text-blue-400">Skills</a></li>
-        <li><a href="projects.html" class="hover:text-blue-400">Projects</a></li>
-        <li><a href="experience.html" class="hover:text-blue-400">Experience</a></li>
-        <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-400">Sanjay Singh</h1>
+        <ul class="hidden md:flex space-x-6">
+          <li><a href="index.html" class="text-blue-400">Home</a></li>
+          <li><a href="skills.html" class="hover:text-blue-400">Skills</a></li>
+          <li><a href="projects.html" class="hover:text-blue-400">Projects</a></li>
+          <li><a href="experience.html" class="hover:text-blue-400">Experience</a></li>
+          <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+        </ul>
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden">
+      <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <li><a href="index.html" class="block py-2 px-3 text-blue-400">Home</a></li>
+        <li><a href="skills.html" class="block py-2 px-3 hover:text-blue-400">Skills</a></li>
+        <li><a href="projects.html" class="block py-2 px-3 hover:text-blue-400">Projects</a></li>
+        <li><a href="experience.html" class="block py-2 px-3 hover:text-blue-400">Experience</a></li>
+        <li><a href="contact.html" class="block py-2 px-3 hover:text-blue-400">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="text-center py-24 bg-gradient-to-r from-blue-500 to-purple-600">
-    <h2 class="text-5xl font-extrabold mb-6">Hi, I'm <span class="text-yellow-300">Sanjay Singh</span></h2>
-    <p class="text-lg max-w-2xl mx-auto text-gray-100">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 px-4">Hi, I'm <span class="text-yellow-300">Sanjay Singh</span></h2>
+    <p class="text-lg max-w-2xl mx-auto text-gray-100 px-4">
       A passionate <span class="text-yellow-300">Full Stack Developer</span> & <span class="text-yellow-300">Data Science Enthusiast</span>.  
       I build modern web apps and work with data to solve real-world problems.
     </p>
@@ -33,20 +50,25 @@
     </div>
   </section>
 
-  <!-- About -->
   <section class="max-w-5xl mx-auto py-16 px-6">
     <h3 class="text-3xl font-bold text-blue-400 mb-6">About Me</h3>
-   <p class="text-gray-300 leading-relaxed">
-  I’m currently pursuing a <span class="text-yellow-300">B.Tech in Computer Science with a specialization in Data Science</span>.  
-  I have hands-on experience with <span class="text-yellow-300">Python, JavaScript, Node.js, React, Tailwind CSS, and Data Wrangling</span>,  
-  and I enjoy building practical solutions through full-stack development and data-driven insights.
-</p>
-
+    <p class="text-gray-300 leading-relaxed">
+      I'm currently pursuing <span class="text-yellow-300">B.Tech in Computer Science (Data Science)</span>.  
+      Skilled in <span class="text-yellow-300">Python, JavaScript, Node.js, React, Tailwind CSS, and Data Wrangling</span>.  
+      Outside coding, I’m deeply passionate about cars 🚗 — especially SUVs that combine comfort with sportiness.
+    </p>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-gray-800 py-6 text-center text-gray-400">
     © 2025 Sanjay Singh. All Rights Reserved.
   </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
